@@ -2,9 +2,8 @@
 
 namespace Pedro{
 
-iterativo::iterativo(){
-
-}
+iterativo::iterativo()
+{}
 
 int iterativo::nCubos(int n)
 {
@@ -21,7 +20,7 @@ QString iterativo::nmNaturais(int n)
     QString resultado = "";
     for (int i = n; i >= 0; i--)
     {
-        if (i == n)
+        if (i == 0)
         {
             resultado += QString::number(i);
         }
@@ -33,10 +32,40 @@ QString iterativo::nmNaturais(int n)
     return resultado;
 }
 
-int iterativo::menorElemento(int n)
+int iterativo::menorElemento(int *vetor, int tamanho)
 {
-    return 2;
+    if (tamanho == 0)
+    {
+        throw QString("Vetor esta vazio");
+    }
+    if (tamanho == 1)
+    {
+        return vetor[0];
+    }
+    int menor = vetor[0];
+    for (int i = 0; i < tamanho; i++)
+    {
+        if (menor > vetor[i])
+        {
+            menor = vetor[i];
+        }
+    }
+    return menor;
+}
 
+QString iterativo::converterBinario(int valor)
+{
+    QString saida = "";
+    while (valor > 0)
+    {
+        saida += QString::number(valor % 2);
+        valor /= 2;
+    }
+    for (int i = saida.size() - 1; i >= 0; i--)
+    {
+        saida += saida[i];
+    }
+    return saida;
 }
 
 }

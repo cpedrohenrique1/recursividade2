@@ -15,14 +15,33 @@ int recursivo::nCubos(int n)
     }
     return 0;
 }
-QString recursivo::nmNaturais(int n, QString resultado)
+QString recursivo::nmNaturais(int n)
 {
+    QString resultado = "";
     if (n >= 0)
     {
         resultado += QString::number(n) + ", ";
-        return nmNaturais(n - 1, resultado);
+        return resultado+= nmNaturais(n - 1);
     }
-    return resultado;
+    return "";
+}
+
+int recursivo::menorElemento(int *vetor, int tamanho)
+{
+    if (tamanho == 0)
+    {
+        throw QString("Vetor esta vazio");
+    }
+    if (tamanho == 1)
+    {
+        return vetor[0];
+    }
+    int menor = menorElemento(vetor, tamanho - 1);
+    if (menor > vetor[tamanho - 1])
+    {
+        menor = vetor[tamanho - 1];
+    }
+    return menor;
 }
 
 }

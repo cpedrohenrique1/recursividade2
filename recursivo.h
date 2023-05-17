@@ -9,7 +9,8 @@ class recursivo
 public:
     recursivo();
     int nCubos(int n);
-    QString nmNaturais(int n, QString resultado = "");
+    QString nmNaturais(int n);
+    int menorElemento(int *vetor, int tamanho);
 };
 
 }

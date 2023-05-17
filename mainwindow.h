@@ -21,6 +21,20 @@ public:
 private slots:
     void on_pushButton_nCubosIterativo_clicked();
 
+    void on_pushButton_nCubosRecursivo_clicked();
+
+    void on_pushButton_NaturaisIterativo_clicked();
+
+    void on_pushButton_NaturaisRecursivo_clicked();
+
+    void on_pushButton_menorElementoIterativo_clicked();
+
+    void on_pushButton_menorElementoRecursivo_clicked();
+
+    void on_pushButton_converterBinarioIterativo_clicked();
+
+    void on_pushButton_converterBinarioRecursivo_clicked();
+
 private:
     Ui::MainWindow *ui;
     Pedro::iterativo iterativo;

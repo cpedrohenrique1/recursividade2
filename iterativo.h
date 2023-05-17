@@ -10,7 +10,8 @@ public:
     iterativo();
     int nCubos(int n);
     QString nmNaturais(int n);
-    int menorElemento(int n);
+    int menorElemento(int *vetor, int tamanho);
+    QString converterBinario(int valor);
 };
 
 }
