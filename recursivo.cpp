@@ -20,7 +20,14 @@ QString recursivo::nmNaturais(int n)
     QString resultado = "";
     if (n >= 0)
     {
-        resultado += QString::number(n) + ", ";
+        if (n == 0)
+        {
+            resultado += QString::number(n);
+        }
+        else
+        {
+            resultado += QString::number(n) + ", ";
+        }
         return resultado+= nmNaturais(n - 1);
     }
     return "";
