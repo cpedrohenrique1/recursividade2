@@ -64,7 +64,26 @@ void MainWindow::on_pushButton_NaturaisRecursivo_clicked()
 void MainWindow::on_pushButton_menorElementoIterativo_clicked()
 {
     try{
-        //ui->textEdit_output->setText(QString::number(iterativo.menorElemento()));
+        int vetor[5];
+        srand(time(0));
+        for (int i = 0; i < 5; i++)
+        {
+            vetor[i] = rand() % 100 + 1;
+        }
+        ui->textEdit_output->setText(QString::number(iterativo.menorElemento(vetor,5)));
+        QString outputVetor = "";
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == 5-1)
+            {
+                outputVetor += QString::number(vetor[i]);
+            }
+            else
+            {
+                outputVetor += QString::number(vetor[i]) + ", ";
+            }
+        }
+        ui->textEdit_outputVetor->setText(outputVetor);
     }
     catch (...)
     {
@@ -76,7 +95,26 @@ void MainWindow::on_pushButton_menorElementoIterativo_clicked()
 void MainWindow::on_pushButton_menorElementoRecursivo_clicked()
 {
     try{
-        //ui->textEdit_output->setText(QString::number(recursivo.menorElemento(vetor,tamanho)));
+        int vetor[5];
+        srand(time(0));
+        for (int i = 0; i < 5; i++)
+        {
+            vetor[i] = rand() % 100 + 1;
+        }
+        ui->textEdit_output->setText(QString::number(recursivo.menorElemento(vetor,5)));
+        QString outputVetor = "";
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == 5-1)
+            {
+                outputVetor += QString::number(vetor[i]);
+            }
+            else
+            {
+                outputVetor += QString::number(vetor[i]) + ", ";
+            }
+        }
+        ui->textEdit_outputVetor->setText(outputVetor);
     }
     catch (...){
         QMessageBox::critical(this,"Erro", "Erro");
@@ -162,6 +200,13 @@ void MainWindow::on_pushButton_multiplicacaoIterativo_clicked()
 
 void MainWindow::on_pushButton_multiplicacaoRecursivo_clicked()
 {
-
+    try
+    {
+        ui->textEdit_output->setText(QString::number(recursivo.multiplicacao(ui->lineEdit_input->text().toInt(), ui->lineEdit_inputY->text().toInt())));
+    }
+    catch(...)
+    {
+        QMessageBox::critical(this,"Erro", "Erro");
+    }
 }
 

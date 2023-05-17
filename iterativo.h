@@ -1,7 +1,6 @@
 #ifndef ITERATIVO_H
 #define ITERATIVO_H
 #include <QString>
-#include <cmath>
 
 namespace Pedro{
 

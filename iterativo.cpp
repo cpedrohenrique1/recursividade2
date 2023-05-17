@@ -34,18 +34,10 @@ QString iterativo::nmNaturais(int n)
 
 int iterativo::menorElemento(int *vetor, int tamanho)
 {
-    if (tamanho == 0)
-    {
-        throw QString("Vetor esta vazio");
-    }
-    if (tamanho == 1)
-    {
-        return vetor[0];
-    }
     int menor = vetor[0];
-    for (int i = 0; i < tamanho; i++)
+    for (int i = 1; i < tamanho; i++)
     {
-        if (menor > vetor[i])
+        if (vetor[i] < menor)
         {
             menor = vetor[i];
         }
@@ -85,20 +77,23 @@ int iterativo::valordeK(int x, int y)
 
 int iterativo::multiplicacao(int N1, int N2)
 {
-    int aux = N1;
     if (N1 == 0 || N2 == 0)
     {
         return 0;
     }
-    if (!(N1 < 0) != !(N2 < 0))
+    if ((N1 < 0) != (N2 < 0))
     {
-        for (int i = N2 - 1; i > 0; i--)
+        int aux = abs(N1);
+        N1 = abs(N1);
+        for (int i = abs(N2) - 1; i > 0; i--)
         {
             N1 += aux;
         }
-        return N1;
+        return -N1;
     }
-    for (int i = N2 - 1; i > 0; i--)
+    int aux = abs(N1);
+    N1 = abs(N1);
+    for (int i = abs(N2) - 1; i > 0; i--)
     {
         N1 += aux;
     }

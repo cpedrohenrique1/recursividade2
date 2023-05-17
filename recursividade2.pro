@@ -12,14 +12,12 @@ SOURCES += \
     iterativo.cpp \
     main.cpp \
     mainwindow.cpp \
-    recursivo.cpp \
-    vetor.cpp
+    recursivo.cpp
 
 HEADERS += \
     iterativo.h \
     mainwindow.h \
-    recursivo.h \
-    vetor.h
+    recursivo.h
 
 FORMS += \
     mainwindow.ui
