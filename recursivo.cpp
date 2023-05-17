@@ -30,7 +30,7 @@ int recursivo::menorElemento(int *vetor, int tamanho)
 {
     if (tamanho == 0)
     {
-        throw QString("Vetor esta vazio");
+        return 0;
     }
     if (tamanho == 1)
     {
@@ -42,6 +42,24 @@ int recursivo::menorElemento(int *vetor, int tamanho)
         menor = vetor[tamanho - 1];
     }
     return menor;
+}
+
+QString recursivo::converterBinario(int valor, QString resultado)
+{
+    if (valor > 0)
+    {
+        return resultado+= converterBinario(valor - 1, resultado = QString::number(valor % 2));
+    }
+    return "";
+}
+
+int recursivo::valordeK(int x, int y)
+{
+    if (y > 0)
+    {
+        return x * valordeK(x, y - 1);
+    }
+    return 1;
 }
 
 }

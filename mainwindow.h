@@ -35,6 +35,14 @@ private slots:
 
     void on_pushButton_converterBinarioRecursivo_clicked();
 
+    void on_pushButton_valordeKIterativo_clicked();
+
+    void on_pushButton_valordeKRecursivo_clicked();
+
+    void on_pushButton_multiplicacaoIterativo_clicked();
+
+    void on_pushButton_multiplicacaoRecursivo_clicked();
+
 private:
     Ui::MainWindow *ui;
     Pedro::iterativo iterativo;

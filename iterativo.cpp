@@ -55,17 +55,54 @@ int iterativo::menorElemento(int *vetor, int tamanho)
 
 QString iterativo::converterBinario(int valor)
 {
-    QString saida = "";
+    QString bin = "";
     while (valor > 0)
     {
-        saida += QString::number(valor % 2);
+        bin += QString::number(valor % 2);
         valor /= 2;
     }
-    for (int i = saida.size() - 1; i >= 0; i--)
+    QString saida = "";
+    for (int i = bin.size()-1; i >= 0; i--)
     {
-        saida += saida[i];
+        saida += bin[i];
     }
     return saida;
+}
+
+int iterativo::valordeK(int x, int y)
+{
+    if (y == 0)
+    {
+        return 1;
+    }
+    int aux = x;
+    for (int i = y; i > 1; i--)
+    {
+        aux *= x;
+    }
+    return aux;
+}
+
+int iterativo::multiplicacao(int N1, int N2)
+{
+    int aux = N1;
+    if (N1 == 0 || N2 == 0)
+    {
+        return 0;
+    }
+    if (!(N1 < 0) != !(N2 < 0))
+    {
+        for (int i = N2 - 1; i > 0; i--)
+        {
+            N1 += aux;
+        }
+        return N1;
+    }
+    for (int i = N2 - 1; i > 0; i--)
+    {
+        N1 += aux;
+    }
+    return N1;
 }
 
 }

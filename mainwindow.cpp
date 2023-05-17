@@ -102,12 +102,66 @@ void MainWindow::on_pushButton_converterBinarioRecursivo_clicked()
 {
     try
     {
-        //ui->textEdit_output->setText(recursivo.converterBinario(ui->lineEdit_input->text().toInt()));
+        ui->textEdit_output->setText(recursivo.converterBinario(ui->lineEdit_input->text().toInt()));
     }
     catch(...)
     {
         QMessageBox::critical(this,"Erro", "Erro");
     }
     
+}
+
+
+void MainWindow::on_pushButton_valordeKIterativo_clicked()
+{
+    try
+    {
+        if (ui->lineEdit_inputY->text().toInt() < 0)
+        {
+            throw QString("Somente será aceito numeros naturais");
+        }
+        ui->textEdit_output->setText(QString::number(iterativo.valordeK(ui->lineEdit_input->text().toInt(), ui->lineEdit_inputY->text().toInt())));
+    }
+    catch(...)
+    {
+        QMessageBox::critical(this,"Erro", "Erro");
+    }
+}
+
+
+void MainWindow::on_pushButton_valordeKRecursivo_clicked()
+{
+    try
+    {
+        if (ui->lineEdit_inputY->text().toInt() < 0)
+        {
+            throw QString("Somente será aceito numeros naturais");
+        }
+        ui->textEdit_output->setText(QString::number(recursivo.valordeK(ui->lineEdit_input->text().toInt(), ui->lineEdit_inputY->text().toInt())));
+    }
+    catch(...)
+    {
+        QMessageBox::critical(this,"Erro", "Erro");
+    }
+    
+}
+
+
+void MainWindow::on_pushButton_multiplicacaoIterativo_clicked()
+{
+    try
+    {
+        ui->textEdit_output->setText(QString::number(iterativo.multiplicacao(ui->lineEdit_input->text().toInt(), ui->lineEdit_inputY->text().toInt())));
+    }
+    catch(...)
+    {
+        QMessageBox::critical(this,"Erro", "Erro");
+    }
+}
+
+
+void MainWindow::on_pushButton_multiplicacaoRecursivo_clicked()
+{
+
 }
 

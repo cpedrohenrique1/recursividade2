@@ -11,6 +11,8 @@ public:
     int nCubos(int n);
     QString nmNaturais(int n);
     int menorElemento(int *vetor, int tamanho);
+    QString converterBinario(int valor, QString resultado = "");
+    int valordeK(int x, int y);
 };
 
 }
